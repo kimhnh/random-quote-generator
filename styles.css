@@ -32,19 +32,19 @@ h2 {
 }
 
 /* Tags */
-.tag {
+span {
   color: #6466e9;
   border: 1px solid #6466e9;
   border-radius: 15px;
   display: inline-block;
-  font-size: 0.625rem;
+  font-size: 0.8rem;
   font-weight: 200;
   margin: 15px 2.5px 20px 2.5px;
-  padding: 5px 10px;
+  padding: 2px 10px;
 }
 
 .container {
-  width: 600px;
+  width: 650px;
 }
 
 .content {
@@ -54,21 +54,42 @@ h2 {
   padding: 2.5rem;
 }
 
-i {
-  border: 2px solid #4a5567;
-  color: #4a5567;
-  column-gap: 0;
-  width: 3rem;
+.icon {
+  font-size: 0;
 }
 
-i:hover {
+button {
+  background-color: inherit;
+  border: none;
+  color: #4a5567;
+  padding: 0.5rem 1rem;
+}
+
+button#refreshQuote {
+  border-left: 2px solid #4a5567;
+  border-top: 2px solid #4a5567;
+  border-bottom: 2px solid #4a5567;
+  border-top-left-radius: 10px 10px;
+  border-bottom-left-radius: 10px 10px;
+}
+
+button#copyQuote {
+  border: 2px solid #4a5567;
+  border-top-right-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+}
+
+i {
+  width: 2rem;
+}
+
+button:hover {
+  background-color: #4a556738;
   color: white;
 }
 
-/* button {
-  background-color: inherit;
-  border: 1px solid #4a5567;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0.5rem;
-} */
+@media (max-width: 641px) {
+  .container {
+    width: 500px;
+  }
+}

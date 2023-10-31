@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/dcece32f35.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./static/quote-left-solid.svg" type="svg" />
     <title>Random Quote Generator</title>
 </head>
 
@@ -16,23 +17,20 @@
     <main class="container">
         <article class="content">
             <section class="upper">
-                <h2 id="author">Author will go here</h2>
+                <h2 id="author"></h2>
                 <div class="tag-block">
-                    <span class="tag" id="tagOne">Tag #1 goes here</span>
-                    <span class="tag" id="tagTwo">Tag #2 goes here</span>
                 </div>
             </section>
             <section class="lower">
                 <div class="quote">
-                    <h1>This is where the quote will go.</span>
-                    </h1>
+                    <h1 id="quote"></h1>
                 </div>
             </section>
         </article>
         <article class="footer">
-            <section class="button">
-                <a href=""><i class="fa-solid fa-arrows-rotate fa-2x"></i></a>
-                <a href=""><i class="fa-solid fa-link fa-2x"></i></a>
+            <section class="icon">
+                <button id="refreshQuote"><i class="fa-solid fa-arrow-rotate-right fa-xl"></i></button>
+                <button id="copyQuote"><i class="fa-solid fa-link fa-xl"></i></button>
             </section>
         </article>
     </main>
@@ -40,13 +38,3 @@
 </body>
 
 </html>
-
-
-
-<!-- 
-https://devchallenges.io/challenge/38
-https://github.com/lukePeavey/quotable
-author, name, quote, tag
-see random quote when they first visit the page
-responsive design on different screen sizes
- -->
