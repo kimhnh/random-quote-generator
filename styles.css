@@ -52,6 +52,25 @@ span {
   border-radius: 1rem;
   margin-bottom: 1rem;
   padding: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.bg {
+  background-image: url('./static/wavy-lines.svg');
+  background-size: 8%;
+  background-position: bottom;
+  border-radius: 1rem 1rem 0 0;
+  margin-bottom: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 92%;
+  width: 100%;
+  height: 10%;
+  opacity: 0.3;
+  z-index: -1;
 }
 
 .icon {
@@ -62,19 +81,19 @@ button {
   background-color: inherit;
   border: none;
   color: #4a5567;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
 }
 
 button#refreshQuote {
-  border-left: 2px solid #4a5567;
-  border-top: 2px solid #4a5567;
-  border-bottom: 2px solid #4a5567;
+  border-left: 1px solid #4a5567;
+  border-top: 1px solid #4a5567;
+  border-bottom: 1px solid #4a5567;
   border-top-left-radius: 10px 10px;
   border-bottom-left-radius: 10px 10px;
 }
 
 button#copyQuote {
-  border: 2px solid #4a5567;
+  border: 1px solid #4a5567;
   border-top-right-radius: 10px 10px;
   border-bottom-right-radius: 10px 10px;
 }
@@ -91,5 +110,9 @@ button:hover {
 @media (max-width: 641px) {
   .container {
     width: 500px;
+  }
+
+  .bg {
+    background-size: 12%;
   }
 }
