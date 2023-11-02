@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Refresh button --> Scuffed method. Not sure how to recall API and delete existing data.
   refreshQuote.addEventListener('click', () => {
-    location.reload();
-    // randomQuote();
+    // location.reload();
+    randomQuote();
   });
 
   // Random quote when page is loaded
