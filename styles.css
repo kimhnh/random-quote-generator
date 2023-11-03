@@ -144,3 +144,13 @@ button:hover {
     top: 100px;
   }
 }
+
+@media (max-width: 376px) {
+  .container {
+    width: 300px;
+  }
+
+  .flash-message {
+    top: 50px;
+  }
+}
