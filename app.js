@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const author = document.getElementById('author');
-  const quote = document.getElementById('quote');
   const copyQuote = document.getElementById('copyQuote');
+  const quote = document.getElementById('quote');
+  const flashMessage = document.querySelector('.flash-message');
   const refreshQuote = document.getElementById('refreshQuote');
 
   // Fetch API
@@ -29,6 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
       copyQuote.addEventListener('click', async function () {
         const copy = `"${data[0].content}" - ${data[0].author}`;
         await navigator.clipboard.writeText(copy);
+        flashMessage.classList.remove('hidden');
+        setTimeout(() => {
+          flashMessage.classList.add('hidden');
+        }, '1500');
       });
     } catch (e) {
       console.log(e);
