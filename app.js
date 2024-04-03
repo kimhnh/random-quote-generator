@@ -1,48 +1,49 @@
-const author = document.getElementById('author');
-const copyQuote = document.getElementById('copyQuote');
-const quote = document.getElementById('quote');
+'use strict';
+
+const footerContainer = document.querySelector('.footer__icon');
+const quote = document.querySelector('.quote__text');
+const quoteAuthor = document.querySelector('.info__author');
+const quoteCopy = document.querySelector('footer__icon--copy');
+const quoteRefresh = document.querySelector('.footer__icon--refresh');
 const flashMessage = document.querySelector('.flash-message');
-const refreshQuote = document.getElementById('refreshQuote');
 
 // Fetch API
 async function randomQuote() {
   try {
     const res = await fetch('https://api.quotable.io/quotes/random');
     const data = await res.json();
-    author.textContent = data[0].author;
-    quote.textContent = `\u201c${data[0].content}\u201d`;
+    const { author, content, tags } = data[0];
+    quoteAuthor.textContent = author;
+    quote.textContent = `"${content}"`;
 
     // Empty tag div per API Request
-    const tagBlock = document.querySelector('.tag-block');
-    tagBlock.innerHTML = '';
+    const tagsContainer = document.querySelector('.info__tag');
+    tagsContainer.innerHTML = '';
 
     // Dynamically add tags
-    if (data[0].tags.length > 0) {
-      for (let i = 0; i < data[0].tags.length; i++) {
-        let tag = document.createElement('span');
-        tag.textContent = data[0].tags[i];
-        tagBlock.appendChild(tag);
-      }
-    }
-
-    // Copy quote&author button
-    copyQuote.addEventListener('click', async function () {
-      const copy = `"${data[0].content}" - ${data[0].author}`;
-      await navigator.clipboard.writeText(copy);
-      flashMessage.classList.remove('hidden');
-      setTimeout(() => {
-        flashMessage.classList.add('hidden');
-      }, '1500');
+    tags.forEach((tag) => {
+      tagsContainer.insertAdjacentHTML('beforeend', `<span>${tag}</span>`);
     });
   } catch (e) {
     console.log(e);
   }
 }
-
-// Refresh button
-refreshQuote.addEventListener('click', () => {
-  randomQuote();
-});
-
-// Random quote when page is loaded
 randomQuote();
+
+// Copy quote (Clipboard API)
+async function copyQuote() {
+  await navigator.clipboard.writeText(`${quote.textContent} - ${quoteAuthor.textContent}`);
+  flashMessage.textContent = 'Copied to clipboard';
+  flashMessage.classList.remove('hidden');
+
+  // remove message
+  setTimeout(() => {
+    flashMessage.classList.add('hidden');
+  }, 1500);
+}
+
+// Event-handler
+footerContainer.addEventListener('click', function (e) {
+  if (e.target.classList.contains('footer__icon--refresh')) randomQuote();
+  if (e.target.classList.contains('footer__icon--copy')) copyQuote();
+});
