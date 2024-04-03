@@ -25,7 +25,7 @@
     />
     <link
       rel="icon"
-      href="./static/quote-left-solid.svg"
+      href="./static/quote-left.svg"
       type="svg"
     />
     <title>Random Quote Generator</title>
@@ -38,34 +38,36 @@
   <body>
     <main class="container">
       <article class="content">
-        <div class="bg"></div>
-        <section class="upper">
-          <h2 id="author"></h2>
-          <div class="tag-block"></div>
+        <div class="content__bg"></div>
+        <section class="info">
+          <h2 class="info__author"></h2>
+          <div class="info__tag"></div>
         </section>
-        <section class="lower">
-          <div class="quote">
-            <h1 id="quote"></h1>
+        <section class="quote">
+          <div class="quote__container">
+            <h1 class="quote__text"></h1>
           </div>
         </section>
       </article>
       <article class="footer">
-        <section class="icon">
-          <button id="refreshQuote">
+        <section class="footer__icon">
+          <button class="footer__icon--refresh">
             <img
               src="./static/Regroup.svg"
               alt=""
+              class="footer__icon--refresh"
             />
           </button>
-          <button id="copyQuote">
+          <button class="footer__icon--copy">
             <img
               src="./static/link.svg"
               alt=""
+              class="footer__icon--copy"
             />
           </button>
         </section>
       </article>
-      <div class="flash-message hidden">Copied to clipboard</div>
+      <div class="flash-message hidden"></div>
     </main>
   </body>
 </html>

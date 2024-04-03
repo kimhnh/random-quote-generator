@@ -89,7 +89,7 @@ span {
   }
 }
 
-.icon {
+.footer__icon {
   font-size: 0;
 }
 
@@ -106,7 +106,7 @@ button {
   padding: 0.3rem 0.7rem;
 }
 
-button#refreshQuote {
+button.footer__icon--refresh {
   border-left: 2px solid #4a556757;
   border-top: 2px solid #4a556757;
   border-bottom: 2px solid #4a556757;
@@ -115,7 +115,7 @@ button#refreshQuote {
   cursor: pointer;
 }
 
-button#copyQuote {
+button.footer__icon--copy {
   border: 2px solid #4a556757;
   border-top-right-radius: 10px 10px;
   border-bottom-right-radius: 10px 10px;
@@ -136,7 +136,7 @@ button:hover {
     width: 520px;
   }
 
-  .bg {
+  .content__bg {
     background-size: 12%;
   }
 
